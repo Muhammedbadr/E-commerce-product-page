@@ -1,0 +1,564 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 112.5%;
+}
+@media (max-width: 90em) {
+  html {
+    font-size: 100%;
+  }
+}
+@media (max-width: 70em) {
+  html {
+    font-size: 90%;
+  }
+}
+@media (max-width: 22em) {
+  html {
+    font-size: 80%;
+  }
+}
+
+body {
+  height: 100vh;
+
+}
+
+header {
+    width: 80%;
+    padding: 10px;
+    margin: auto; /* Center the header */
+}
+
+.header_title {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    padding: 10px 0; /* Adjusted padding */
+    position: relative;
+    
+}
+header::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid rgb(187, 187, 187); /* Add a solid black bottom border */
+    width: 100%; /* Make the border span the entire width of the header */
+    margin-top: 26px; /* Adjust the spacing between the border and the content */
+}
+/* left */
+.left {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.left > svg {
+    margin-right: 60px;
+}
+
+ul {
+    display: flex;
+    padding-left: 20px;
+    list-style: none; /* Remove default list styling */
+    margin: 0; /* Remove default margin */
+    align-items: center; /* Center items vertically */
+
+}
+
+.left li {
+    margin-right: 20px; /* Add space between list items */
+    cursor: pointer;
+    position: relative; /* Set position to relative to contain the absolute pseudo-element */
+}
+.left li:hover{
+    font-weight: bold;
+}
+.left li:hover::after {
+    content: "";
+    position: absolute;
+    display: block;
+    border-bottom: 3px solid orange;
+    width: 100%; /* Make the border span the width of the word */
+    left: 0; /* Align the border with the start of the text */
+    bottom: -45px; /* Adjust this value as necessary to position the border correctly */
+    border-radius: 20px;
+}
+/* right */
+.right {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.right .shoping-card {
+    position: relative;
+    margin-right: 20px;
+}
+
+.alert_prodect::before {
+    content: "1";
+    position: absolute;
+    top: -12px;
+    right: -2px;
+    background-color: orange;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    
+}
+.alert_prodect{
+    display: none;
+}
+.box-product {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    min-height: 20pc;
+    width: 400px;
+    padding: 10px 15px 15px 15px;
+    background: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    display: none;
+    z-index: 10;
+}
+
+.shoping-card .box-product {
+    display: none;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 15px;
+}
+.card-alert{
+    display: flex; /* Use 'grid' if using CSS Grid */
+    justify-content: center;
+    align-items: center;
+        height: 15pc;
+        color: gray;
+        font-family: Arial, Helvetica, sans-serif;
+}
+
+.checkout {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+.checkout  .delet{
+    cursor: pointer;
+    color: black;
+}
+.checkout img {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.checkout-details {
+    align-items: center;
+    flex: 1;
+    line-height: 1.7;
+}
+
+.checkout-details svg {
+    margin-right: 10px;
+}
+
+.details-text {
+    display: flex;
+    flex: 1;
+}
+
+.details-text .title {
+    font-size: 16px;
+    margin: 0;
+}
+
+.price {
+    font-size: 16px;
+    color: green;
+}
+
+.original-price {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.checkout-button {
+    width: 100%;
+    padding: 10px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.checkout-button:hover {
+    background-color: darkorange;
+}
+
+.right > img {
+    width: 40px;
+    height: 40px;
+    border: 2px solid orange;
+    border-radius: 50%;
+}
+
+main {
+    width: 80%;
+    padding: 10px;
+    margin: auto; /* Center the header */
+    display: flex;
+    justify-content: space-between; /* Distribute space between left and right sections */
+    margin-top: 50px; /* Top margin for spacing */
+    margin-bottom: 50px;
+
+}
+
+main .main_left {
+
+    width: 40%;
+}
+
+main .main_left .large-image {
+    width: 100%; /* Make the large image responsive */
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 10px; 
+    /* Space between large image and small images */
+    border-radius: 10px;
+    cursor: pointer;
+
+
+}
+
+main .main_left .images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for the small images */
+    gap: 10px; /* Adjust gap between images */
+}
+
+main .main_left .images img {
+    width: 100%;
+    cursor: pointer;
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover; /* Ensure the images cover their grid cell without distortion */
+}
+
+
+.img-on_screen
+{
+    width: 100%;
+
+}
+.hiden_img{
+    display: none;
+}
+.img-on_screen::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0,0.7);
+    height: 120vh;   
+    
+}
+.images_all_screen{
+    width: 450px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.images_all_screen > svg ,
+.images_all_screen .myPath{
+    
+    position: absolute;
+    top: -25px;
+    right: 0;
+    cursor: pointer;
+    margin-bottom: -20px;
+    font-size: large;
+    fill:orange;
+    
+
+}
+.main_left_all_screen img{
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.img_screen{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.img_screen img{
+    object-fit: cover;
+    width: 100px;
+}
+
+
+
+
+
+/* .right */
+
+.main_right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;}
+
+.text_title {
+    margin-bottom: 40px;
+}
+
+.text_title .p-1 {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff7d1a;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.text_title h1 {
+    font-size: 50px;
+    margin: 0 0 30px;
+}
+.title{
+    font-size: 13px;
+    color: #69707D;
+}
+.text_title p {
+    font-size: 16px;
+    color: #69707D;
+    line-height: 1.6;
+    margin: 0 0 20px;
+}
+
+
+
+.price h2 {
+    font-size: 28px;
+    color: black;
+    margin-right: 20px;
+}
+
+.price h2 span {
+    font-size: 18px;
+    color: #ff7d1a;
+    background-color: #ffeedb;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.price p {
+    font-size: 16px;
+    color: #B6BCC8;
+    text-decoration: line-through;
+    margin-bottom: 20px;
+}
+
+.add_cards {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.plas_manyis {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* border: 1px solid #B6BCC8; */
+    /* padding: 10px 20px; */
+    border-radius:30px;
+    background-color: rgb(240, 240, 240);
+    
+}
+
+.plas_manyis button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ff7d1a;
+
+    
+}
+
+.plas_manyis p {
+    font-size: 24px;
+    margin: 0;
+    width: 20px;
+    text-align: center;
+}
+
+
+
+/* Icon Styling */
+.icon-shoping {
+    fill: #ffffff; /* Adjusted to white to match the button text color */
+    width: 22px;
+    height: 20px;
+    margin-right: 10px; /* Space between the icon and the button text */
+    cursor: pointer;
+
+}
+
+/* Button Styling */
+.add-button {
+    background-color: #ff7d1a;
+    color: white;
+    border: none;
+    padding: 15px 60px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    
+}
+
+.add-button:hover {
+    background-color: #ff5200; /* Darker orange on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .btn_icon_shping {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .add-button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .icon-shoping {
+        margin-right: 0;
+        margin-bottom: 10px; /* Adjust spacing for vertical layout */
+    }
+}
+
+.plas_manyis >button{
+    color: #ff7d1a;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.add_cards button svg {
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main_left, .main_right {
+        width: 100%;
+    }
+
+    .main_left .images {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+    }}
+
+    /* Your existing CSS */
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    /* Adjustments for smaller screens */
+    .header_title {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .header_title ul {
+      padding-left: 0;
+      margin-top: 10px;
+      justify-content: center;
+    }
+  
+    .main_left {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .main_right {
+      width: 100%;
+    }
+  
+    .text_title h1 {
+      font-size: 28px;
+    }
+  
+    .price h2 {
+      font-size: 24px;
+    }
+  
+    .price h2 span {
+      font-size: 16px;
+    }
+  
+    .price p {
+      font-size: 14px;
+    }
+  
+    .add_cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .plas_manyis {
+      margin-bottom: 10px;
+    }
+  
+    .add-button {
+      padding: 12px 40px;
+      font-size: 14px;
+    }
+  
+    .plas_manyis > button {
+      padding: 8px 16px;
+      font-size: 24px;
+    }
+  }
+  
